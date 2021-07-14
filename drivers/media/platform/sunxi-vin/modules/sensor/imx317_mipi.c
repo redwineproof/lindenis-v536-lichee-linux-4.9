@@ -655,8 +655,8 @@ static struct regval_list sensor_10b4k60_regs[] = {
 	{0x300C, 0x0C},
 	{0x300D, 0x00},
 };
-#endif
 
+#endif
 static struct regval_list sensor_12b4k25_regs[] = {
 	{0x3000, 0x12},
 
@@ -1103,7 +1103,7 @@ static struct regval_list sensor_10b4k25_regs[] = {
 	{0x3012, 0x03},
 
 };
-
+#endif
 static struct regval_list sensor_1080p60_regs[] = {
 
 	{0x3000, 0x12},
@@ -1545,7 +1545,7 @@ static struct regval_list sensor_1080p120_regs[] = {
 	{0x300D, 0x00},
 };
 
-
+#if 0
 static struct regval_list sensor_720p180_regs[] = {
 
 	{0x3000, 0x12},
@@ -2530,7 +2530,7 @@ static struct sensor_win_size sensor_win_sizes[] = {
 	 .regs_size = ARRAY_SIZE(sensor_10b4k25_regs),
 	 .set_size = NULL,
 	 },
-
+#endif
 	{
 	 .width = 1920,
 	 .height = 1080,
@@ -2571,6 +2571,8 @@ static struct sensor_win_size sensor_win_sizes[] = {
 	 .regs = sensor_1080p60_regs,
 	 .regs_size = ARRAY_SIZE(sensor_1080p60_regs),
 	 .set_size = NULL,
+     .top_clk = 300*1000*1000,
+	 .isp_clk = 266*1000*1000,
 	 },
 
 	{
@@ -2591,8 +2593,10 @@ static struct sensor_win_size sensor_win_sizes[] = {
 	 .regs = sensor_1080p120_regs,
 	 .regs_size = ARRAY_SIZE(sensor_1080p120_regs),
 	 .set_size = NULL,
+	 .top_clk = 300*1000*1000,
+	 .isp_clk = 297*1000*1000,
 	 },
-
+#if 0
 	{
 	  .width = HD1080_WIDTH,
 	  .height = HD1080_HEIGHT,
