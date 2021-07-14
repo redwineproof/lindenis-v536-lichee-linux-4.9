@@ -36,9 +36,9 @@ struct sensor_helper_dev {
 	const char *name;
 };
 
-#define DEV_DBG_EN   0
+#define DEV_DBG_EN   1
 #if (DEV_DBG_EN == 1)
-#define sensor_dbg(x, arg...) printk(KERN_DEBUG "[%s]" x, SENSOR_NAME, ## arg)
+#define sensor_dbg(x, arg...) printk(KERN_ERR "[%s]" x, SENSOR_NAME, ## arg)
 #else
 #define sensor_dbg(x, arg...)
 #endif
